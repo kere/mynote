@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ if .IsPage }}
+  <meta property="description" content="{{ .Description }}">
+{{ else }}
+  <title>{{.Title }}</title>
+  <meta property="description" content="{{ .Site.Params.description }}">
+{{ end }}
+{{ if .Params.author }}
+  <meta property="author" content="{{ .Params.author }}">
+{{else}}
+  <meta property="author" content="{{ .Site.Author.name }}">
+{{end}}
+
+{{ if .Keywords }}
+  <meta property="keywords" content ="{{ delimit .Keywords ", " }}">
+{{ end }}
+
+{{ if .RSSLink }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+{{ end }}
+
+<!--{{ $styles := resources.Get "css/main.css" | minify | fingerprint }}-->
+<!-- $styles := resources.Get "css/scss/main.scss" | resources.ToCSS | fingerprint -->
+
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">

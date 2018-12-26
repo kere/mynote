@@ -1,0 +1,45 @@
+/*- Typography -*/
+//
+// Based on the typographic scale: 12, 14, 16, 18, 21, 24, 36, 48, 60, 72.
+//
+
+hr{
+  margin-top: $updngap + 0.5;
+  margin-bottom: $updngap + 0.5;
+  border-style: solid;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-color: $border-color;
+  border-bottom-color: #FAFAFA;
+}
+
+
+blockquote {
+  border-left: 6px solid #b4b4b4;
+	font-style: normal;
+  margin: 0;
+  padding: 0 1em;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	    -ms-border-radius: 4px;
+          border-radius: 4px;
+//	background-color: darken($background-color, 5%);
+	background-color: $blockquote-color;
+	p, ul, ol {
+		padding: 1.2em 0;
+	}
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: $updngap auto;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+          border-radius: 4px;
+}
+
+img[title="shadow"] {
+  box-shadow: 0 2px 6px #ddd;
+}

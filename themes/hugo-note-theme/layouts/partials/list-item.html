@@ -1,0 +1,23 @@
+<li class="note-post ">
+  <a href="{{ .Permalink }}"><h1 class="title">{{ .Title }}</h1> </a>
+  <div class="by-line post-time">
+    <time datetime="{{ .Date.Format "2006-01-02" }}"> <i>{{ .Date.Format "2006-01-02" }}</i> </time>
+    <div class="f-right">
+      {{$baseURL := .Site.BaseURL}}
+      {{ if .Params.tags }}
+        {{range .Params.tags}} <a href="{{$baseURL}}/tags/{{ . | urlize}}.html">{{ . }}</a> {{end}}
+      {{end}}
+		</div>
+  </div>
+
+  {{ if .Params.image }}
+  <a href="{{ .Permalink}}"><img src="{{ .Params.image }}"></a>
+  {{ end }}
+
+  <a href="{{ .Permalink }}">
+    <div class="content">
+      {{ .Summary }}
+    </div>
+    {{ if .Truncated }} <span class="read-more"> Read More -&gt; </span> {{ end }}
+  </a>
+</li>

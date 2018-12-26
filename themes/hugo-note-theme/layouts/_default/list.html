@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+{{ partial "nav.html" . }}
+<div id="container">
+  <ul class="note-posts">
+{{ range $index, $element := $.Paginator.Pages }}
+   {{ partial "list-item.html" . }}
+{{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+</div>
+<script type="text/javascript">
+  var t = document.getElementById("container");
+  var imgs = t.querySelectorAll('img'), img;
+  for (var i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    img.setAttribute('data-echo', img.src);
+    img.src = '';
+  }
+</script>
+{{ partial "footer.html" . }}
+  </body>
+{{ partial "echojs.html" . }}
+</html>

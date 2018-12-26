@@ -1,0 +1,272 @@
+/*- Custom style -*/
+
+// -- Put custom style under this point -- //
+html{
+//  background-image: url(/css/background-2.jpg);
+  background-image: url($bk-img);
+}
+body{
+  font-size: 1.2em;
+  @media (min-width: 1100px) {
+    font-size: 1.4em;
+	}
+  max-width: 960px;
+}
+
+
+$post-font-size: 1em;
+$post-line-height: 1.5em;
+$code-size:$post-font-size * 0.8;
+
+.content{
+  a.reversefootnote{
+	  text-decoration: none;
+  }
+
+  a.footnote{
+    text-decoration: none;
+    background: $border-color;
+    border-radius: 5px;
+  }
+
+  font-size: $post-font-size;
+	line-height: $post-line-height;
+
+  h1{
+    font-size: $post-font-size * 1.25;
+  }
+  h2{
+    font-size: $post-font-size * 1.13;
+  }
+  h3, h4, h5{
+    font-size: $post-font-size * 1;
+  }
+  h6{
+    font-size: $post-font-size * 0.9;
+  }
+  p{
+    text-indent: 1em;
+  }
+  h1+p,h2+p,h3+p,h4+p,h5+p,h6+p{
+    text-indent: 0;
+  }
+}
+
+.title{
+  font-size: $post-font-size * 1.25;
+  line-height: $post-font-size * 1.25;
+  font-weight: $title-font-weight;
+}
+
+
+.img-alt{
+  text-align: center;
+  text-indent: 0;
+  font-weight: lighter;
+  font-size: 0.8em;
+  margin-top: -1em;
+  color: lighten($text-color, 46%);;
+  line-height: 1.4em;
+  &>small{
+    padding: 0 1em;
+    padding-bottom:0.3em;
+    border-bottom:1px solid #E2E2E2;
+  }
+}
+
+#nav-menu{
+  top: 0.5rem;
+  right : 1em;
+  @media (min-width: 620px) {
+    right : 1.5em;
+  }
+}
+#nav-links{
+  margin-top: 0.5em;
+}
+
+.avatar{
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin:0;
+  padding:0;
+}
+
+.small-font{
+  font-size:0.8em;
+  color: lighten($text-color, 30%);
+  font-weight: 200;
+}
+
+.post-time{
+  font-family: serif;
+  font-size: $post-font-size*0.8;
+  color: lighten($text-color, 30%);
+  a{
+    color: lighten($text-color, 30%);
+  }
+}
+
+.arc-list{
+  list-style-position: outside;
+  li{
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+#nav-list hr{
+  width: 5rem;
+}
+
+.read-more{
+  display: block;
+  color: lighten($text-color, 30%);
+  text-decoration: underline;
+  font-weight:lighter;
+  margin-top: 1em;
+}
+
+#header{
+  padding:0 1em;
+  .avatar{
+    position: relative;
+
+    @media (min-width: 1100px) {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+  h1{
+    display: none;
+    /*- large -*/
+    @media (min-width: 1100px) {
+      left:0;
+      bottom:0;
+    }
+	}
+  @media (min-width: 620px) {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+/* Posts */
+
+.note-posts {
+  padding-bottom:3em;
+  list-style-type: none;
+  li{
+    padding-bottom: 1.5em;
+  }
+}
+
+#post-page {
+  margin-bottom: $updngap;
+}
+
+#post-page, .note-posts{
+  padding-left: 1em;
+  padding-right: 1em;
+  @media (min-width: 620px) {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  p, ul, ol {
+    margin-bottom: $updngap;
+  }
+  .content {
+    ul, ol{
+      list-style-position: inside;
+    }
+  }
+}
+
+.note-post+.note-post:before {
+    display: block;
+    content: '';
+    height: 0;
+    margin: auto;
+    border-style: none;
+    border-bottom:1px dashed $border-color;
+    margin-bottom: 1.5em;
+}
+
+
+code {
+  font-family: monospace, sans-serif;
+  color: $code-color;
+}
+
+.highlighter-rouge{
+  font-size: $code-size;
+  padding: 1rem;
+  background-color: $code-background;
+  margin: 0;
+  margin-bottom: $updngap;
+  pre{
+    margin: 0;
+    padding:0;
+  }
+}
+.post-footer {
+  margin-top: 3rem;
+  padding-bottom: 6rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  text-align: right;
+  line-height: 2.3rem;
+	font-size: $post-font-size;
+  @media (min-width: 620px) {
+    padding-right:2em;
+    padding-left: 2em;
+  }
+}
+.el-pagination {
+  white-space: nowrap;
+  color: #303133;
+  font-weight: 700;
+  text-align:center;
+  margin-top: 1rem;
+  padding-left:15px;
+  padding-right:15px;
+  padding-bottom: 3rem;
+}
+.el-pager {
+  user-select: none;
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+}
+.el-pager li.active {
+  color: #409eff;
+  cursor: default;
+}
+.el-pager li {
+  padding: 0 4px;
+  vertical-align: top;
+  display: inline-block;
+  font-size: 13px;
+  min-width: 35.5px;
+  height: 28px;
+  line-height: 28px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+}
+.page-links-disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+}
+.page-links-active{
+  a{
+    color: #e6980a;
+  }
+}

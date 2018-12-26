@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Title }}</title>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+
+    {{ partial "nav.html" . }}
+    <article id="post-page">
+      <h1 class="title">{{ .Title }}</h1>
+      <div class="by-line post-time">
+        <time><i>{{ .Date.Format "2006-01-02" }}</i></time>
+        <div class="f-right">
+          {{$baseURL := .Site.BaseURL}}
+          {{ if .Params.tags }}
+          {{range .Params.tags}} <a href="{{$baseURL}}/tags/{{ . | urlize}}.html">{{ . }}</a> {{end}}
+          {{end}}
+        </div>
+      </div>
+      <div class="content m-t">
+        {{ .Content }}
+      </div>
+    </article>
+    <script type="text/javascript">
+      var t = document.getElementById("post-page");
+      var imgs = t.querySelectorAll('img'), img;
+      for (var i = 0; i < imgs.length; i++) {
+        img = imgs[i];
+        img.setAttribute('data-echo', img.src);
+        img.src = '';
+      }
+    </script>
+    <footer class="post-footer">
+      <div class="align-right">
+        {{ if .Params.author }}
+        <span>{{ .Params.author }}</span><br/>
+        {{else}}
+        <span>{{ .Site.Author.name }}</span><br/>
+        {{end}}
+        <span>{{ .Date.Format "2006-01-02" }}</span>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+    function imageTitle(){
+      var postPage = document.getElementById("post-page");
+      if (!postPage){
+        return;
+      }
+      var imgs = postPage.querySelectorAll('img')
+      var img, item, span;
+      for (var i = 0; i < imgs.length; i++) {
+        img = imgs[i];
+        if(img.alt == '') continue;
+        item = document.createElement("div");
+        item.className = 'img-alt';
+        span = document.createElement("small");
+        span.innerText = img.alt;
+        item.appendChild(span);
+
+        var parent = img.parentNode;
+        if(parent.lastChild == img){
+          parent.appendChild(item);
+        } else {
+          parent.insertBefore(item, img.nextSibling);
+        }
+      }
+    }
+    imageTitle();
+  </script>
+  {{ partial "echojs.html" . }}
+<html>
