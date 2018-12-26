@@ -14,7 +14,7 @@
         <div class="f-right">
           {{$baseURL := .Site.BaseURL}}
           {{ if .Params.tags }}
-          {{range .Params.tags}} <a href="{{$baseURL}}/tags/{{ . | urlize}}.html">{{ . }}</a> {{end}}
+          {{range .Params.tags}} <a href="{{$baseURL}}/tags/{{ . | urlize}}">{{ . }}</a> {{end}}
           {{end}}
         </div>
       </div>

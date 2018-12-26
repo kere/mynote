@@ -1,7 +1,7 @@
 languageCode = "cn-zh"
 title = "Onqee"
 paginate = 10
-uglyURLs = true
+uglyURLs = false
 enableRobotsTXT = true
 hasCJKLanguage = true
 theme = "hugo-note-theme"
@@ -11,13 +11,13 @@ theme = "hugo-note-theme"
     identifier = "dev"
     name = "编程"
     title = "程序开发"
-    url = "/dev.html"
+    url = "/dev/"
     weight = 0
   [[menu.main]]
     identifier = "notes"
     name = "日志"
     title = "我的个人日志"
-    url = "/notes.html"
+    url = "/notes/"
     weight = 0
 
 [taxonomies]
