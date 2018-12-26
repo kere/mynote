@@ -5,6 +5,8 @@ uglyURLs = false
 enableRobotsTXT = true
 hasCJKLanguage = true
 theme = "hugo-note-theme"
+canonifyURLs = true
+baseURL = "http://localhost:1313"
 
 [menu]
   [[menu.main]]
