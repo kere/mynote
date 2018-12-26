@@ -1,1 +1,1 @@
-hugo --theme=hugo-note-theme --minify
+hugo --minify

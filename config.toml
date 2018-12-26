@@ -4,6 +4,7 @@ paginate = 10
 uglyURLs = true
 enableRobotsTXT = true
 hasCJKLanguage = true
+theme = "hugo-note-theme"
 
 [menu]
   [[menu.main]]
