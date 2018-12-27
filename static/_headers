@@ -1,3 +1,6 @@
+/*
+cache-control: public, max-age=3600, must-revalidate
+
 /css/*
 cache-control: public, max-age=864000, must-revalidate
 
@@ -6,6 +9,3 @@ cache-control: public, max-age=864000, must-revalidate
 
 /*.png
 cache-control: public, max-age=864000, must-revalidate
-
-/*
-cache-control: public, max-age=3600, must-revalidate
